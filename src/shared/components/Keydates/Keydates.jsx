@@ -37,7 +37,7 @@ export default function Keydates() {
               </div>
               <div className="space-y-2">
                 <p className="inter-semibold lg:text-[22px] text-gray-900 text-[20px]">Abstract Submission Deadline</p>
-                <p className="inter-regular text-gray-700 sm:text-base md:text-lg lg:text-[16px] text-justify leading-[30px]">August 10, 2025</p>
+                <p className="inter-regular text-gray-700 sm:text-base md:text-lg lg:text-[16px] text-justify leading-[30px]">March 03, 2025</p>
               </div>
             </div>
           </div>
@@ -49,7 +49,7 @@ export default function Keydates() {
               </div>
               <div className="space-y-2">
                 <p className="inter-semibold lg:text-[22px] text-gray-900 text-[20px]">Full Paper Submission Deadline</p>
-                <p className="inter-regular text-gray-700 sm:text-base md:text-lg lg:text-[16px] text-justify leading-[30px]">August 10, 2025</p>
+                <p className="inter-regular text-gray-700 sm:text-base md:text-lg lg:text-[16px] text-justify leading-[30px]">March 11, 2025</p>
               </div>
             </div>
           </div>
@@ -61,7 +61,7 @@ export default function Keydates() {
               </div>
               <div className="space-y-2">
                 <p className="inter-semibold lg:text-[22px] text-gray-900 text-[20px]">Notification of Acceptance</p>
-                <p className="inter-regular text-gray-700 sm:text-base md:text-lg lg:text-[16px] text-justify leading-[30px]">September 15, 2025</p>
+                <p className="inter-regular text-gray-700 sm:text-base md:text-lg lg:text-[16px] text-justify leading-[30px]">March 26, 2025</p>
               </div>
             </div>
           </div>
@@ -73,7 +73,7 @@ export default function Keydates() {
               </div>
               <div className="space-y-2">
                 <p className="inter-semibold lg:text-[22px] text-gray-900 text-[20px]">Final Paper Submission</p>
-                <p className="inter-regular text-gray-700 sm:text-base md:text-lg lg:text-[16px] text-justify leading-[30px]">September 30, 2025</p>
+                <p className="inter-regular text-gray-700 sm:text-base md:text-lg lg:text-[16px] text-justify leading-[30px]">April 13, 2025</p>
               </div>
             </div>
           </div>
@@ -85,7 +85,7 @@ export default function Keydates() {
               </div>
               <div className="space-y-2">
                 <p className="inter-semibold lg:text-[22px] text-gray-900 text-[20px]">Registration Deadline</p>
-                <p className="inter-regular text-gray-700 sm:text-base md:text-lg lg:text-[16px] text-justify leading-[30px]">September 15, 2025</p>
+                <p className="inter-regular text-gray-700 sm:text-base md:text-lg lg:text-[16px] text-justify leading-[30px]">April 25, 2025</p>
               </div>
             </div>
           </div>
@@ -97,7 +97,7 @@ export default function Keydates() {
               </div>
               <div className="space-y-2">
                 <p className="inter-semibold lg:text-[22px] text-gray-900 text-[20px]">Conference Dates</p>
-                <p className="inter-regular text-gray-700 sm:text-base md:text-lg lg:text-[16px] text-justify leading-[30px]">October 24–26, 2025</p>
+                <p className="inter-regular text-gray-700 sm:text-base md:text-lg lg:text-[16px] text-justify leading-[30px]">April 29, 2025</p>
               </div>
             </div>
           </div>

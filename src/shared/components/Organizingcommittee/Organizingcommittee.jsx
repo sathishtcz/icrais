@@ -31,7 +31,7 @@ export default function Organizingcommittee() {
         <h3 className="inter-bold lg:text-[30px] text-[25px] text-center">The Core Team of ICRAIS </h3>
         <div className="xl:max-w-[1450px] md:max-w-[920px] mx-auto mt-3  px-3">
           <p className="inter-regular text-gray-900 sm:text-base md:text-lg lg:text-[16px] text-justify leading-[30px] mb-10 ">The Core Organizing Committee of ICRAIS 2025 is composed of dedicated leaders, seasoned academics, and industry experts who are committed to delivering a world-class conference experience. Our team coordinates every aspect of the event - from technical program development and speaker invitations to seamless logistics and engaging delegate experiences. With diverse expertise across robotics, artificial intelligence, and intelligent systems, the committee works collaboratively to ensure that ICRAIS 2025 is an impactful, inclusive, and inspiring platform for sharing knowledge and fostering global connections.</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               ["Chairman", "Dr John Smith", "Principal", "M.E., Ph.D.", "Chennai"],
               ["Convenors", "Dr John Smith", "Principal", "M.E., Ph.D.", "Chennai"],
@@ -58,7 +58,7 @@ export default function Organizingcommittee() {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
 

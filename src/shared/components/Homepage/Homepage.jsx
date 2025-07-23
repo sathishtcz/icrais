@@ -25,7 +25,7 @@ function Homepage() {
                       <IoLocationSharp className='text-4xl text-black' />
                       <div className="flex flex-col gap-1">
                         <p className="inter-regular sm:text-base md:text-lg lg:text-[16px] text-gray-700">Location</p>
-                        <p className="inter-semibold sm:text-base md:text-lg lg:text-[16px] text-black">TamilNadu, Chennai</p>
+                        <p className="inter-semibold sm:text-base md:text-lg lg:text-[16px] text-black">Los Angeles, USA</p>
                       </div>
                     </div>
                   </div>
@@ -35,7 +35,7 @@ function Homepage() {
                       <PiCalendarCheckFill className='text-4xl text-black' />
                       <div className="flex flex-col gap-1">
                         <p className="inter-regular sm:text-base md:text-lg lg:text-[16px] text-gray-700">Date</p>
-                        <p className="inter-semibold sm:text-base md:text-lg lg:text-[16px] text-black">August 20-25, 2025 </p>
+                        <p className="inter-semibold sm:text-base md:text-lg lg:text-[16px] text-black">April 29, 2025 </p>
                       </div>
                     </div>
                   </div>
@@ -197,7 +197,7 @@ function Homepage() {
       </div>
 
 
-      <div className="px-3 lg:mt-15 mt-10 bg-[#DFDBF2]">
+      {/* <div className="px-3 lg:mt-15 mt-10 bg-[#DFDBF2]">
         <div className="xl:max-w-[1450px]  md:max-w-[920px] mx-auto py-10">
           <h3 className="inter-bold lg:text-[30px] text-[25px] text-center">Our Event Speakers</h3>
           <p className="inter-regular text-gray-900 sm:text-base md:text-lg lg:text-[16px] text-justify leading-[30px] mt-6">Our conference features distinguished speakers who are pioneers in robotics, artificial intelligence, and intelligent systems. From leading researchers and innovators to industry experts and visionaries, our speakers share valuable insights, breakthrough ideas, and practical solutions that inspire the community. Their diverse expertise and forward-thinking perspectives make each session an opportunity to learn, connect, and shape the future of intelligent technologies together.</p>
@@ -231,7 +231,7 @@ function Homepage() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
 
 
