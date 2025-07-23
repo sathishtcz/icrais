@@ -25,7 +25,7 @@ function Homepage() {
                       <IoLocationSharp className='text-4xl text-black' />
                       <div className="flex flex-col gap-1">
                         <p className="inter-regular sm:text-base md:text-lg lg:text-[16px] text-gray-700">Location</p>
-                        <p className="inter-semibold sm:text-base md:text-lg lg:text-[16px] text-black">Los Angeles, USA</p>
+                        <p className="inter-semibold sm:text-base md:text-lg lg:text-[16px] text-black">Mumbai, India</p>
                       </div>
                     </div>
                   </div>
@@ -35,7 +35,7 @@ function Homepage() {
                       <PiCalendarCheckFill className='text-4xl text-black' />
                       <div className="flex flex-col gap-1">
                         <p className="inter-regular sm:text-base md:text-lg lg:text-[16px] text-gray-700">Date</p>
-                        <p className="inter-semibold sm:text-base md:text-lg lg:text-[16px] text-black">April 29, 2025 </p>
+                        <p className="inter-semibold sm:text-base md:text-lg lg:text-[16px] text-black">August 06, 2025 </p>
                       </div>
                     </div>
                   </div>
