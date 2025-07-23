@@ -29,7 +29,7 @@ function Aboutus() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 justify-center items-center lg:gap-20 gap-10 mt-10">
                     <div className="lg:block hidden ">
                         <div className="flex justify-center">
-                            <img src="/assets/images/About.jpg" alt="Aboutimage" className='w-[713px]' />
+                            <img src="/assets/images/About.jpg" alt="Aboutimage" className='w-[713px]'  loading="lazy"/>
                         </div>
                     </div>
 
@@ -43,7 +43,7 @@ function Aboutus() {
                         </div>
                         <div className="lg:hidden block mt-5">
                             <div className="flex justify-center">
-                                <img src="/assets/images/About.jpg" alt="Aboutimage" className='' />
+                                <img src="/assets/images/About.jpg" alt="Aboutimage" className='' loading="lazy"/>
                             </div>
                         </div>
 

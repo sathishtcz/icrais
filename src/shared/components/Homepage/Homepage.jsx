@@ -15,7 +15,7 @@ function Homepage() {
               <div className="flex flex-col lg:gap-7 gap-4 xl:mt-15 mt-25">
                 <h1 className="inter-bold lg:text-[50px] md:text-[40px] sm:text-[25px] text-[24px]">International Conference on <span className="text-[#1B56FD]">Robotics, AI,</span> and <span className="text-[#1B56FD]">Intelligent Systems</span></h1>
                 <div className="block xl:hidden flex  justify-center">
-                  <img src="assets/images/Hero.png" alt="AI and Robotics" className="w-[559px]" />
+                  <img src="assets/images/Hero.png" alt="AI and Robotics" className="w-[559px]" loading="lazy"/>
                 </div>
                 <p className="inter-regular text-gray-700 sm:text-base md:text-lg lg:text-[16px] text-justify leading-[30px]">Join leading experts, innovators, and researchers at ICRAIS to explore the cutting edge of robotics, artificial intelligence, and intelligent systems. Discover breakthroughs, share insights, and shape the next generation of smart technologies.</p>
                 <div className="flex md:flex-row flex-col gap-5 w-full">
@@ -70,15 +70,15 @@ function Homepage() {
                 </div>
                 <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
                   <div className="flex flex-col items-center gap-2">
-                    <img src="/assets/images/Robotics.png" alt="robotics" className="border-7 border-[#C1C2FF] rounded-full w-[170px]" />
+                    <img src="/assets/images/Robotics.png" alt="robotics" className="border-7 border-[#C1C2FF] rounded-full w-[170px]"  loading="lazy"/>
                     <p className="inter-medium xl:text-[20px] text-[18px]">Robotics </p>
                   </div>
                   <div className="flex flex-col items-center gap-2">
-                    <img src="/assets/images/AI.png" alt="AI" className="border-7 border-[#C1C2FF] rounded-full w-[170px]" />
+                    <img src="/assets/images/AI.png" alt="AI" className="border-7 border-[#C1C2FF] rounded-full w-[170px]"  loading="lazy" />
                     <p className="inter-medium xl:text-[20px] text-[18px]">Articial Intelligence </p>
                   </div>
                   <div className="flex flex-col items-center gap-2">
-                    <img src="/assets/images/IS.png" alt="IS" className="border-7 border-[#C1C2FF] rounded-full w-[170px]" />
+                    <img src="/assets/images/IS.png" alt="IS" className="border-7 border-[#C1C2FF] rounded-full w-[170px]" loading="lazy" />
                     <p className="inter-medium xl:text-[20px] text-[18px]">Intelligent System </p>
                   </div>
                 </div>
@@ -94,7 +94,7 @@ function Homepage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 justify-center items-center lg:gap-20 gap-10">
           <div className="lg:block hidden ">
             <div className="flex justify-center">
-              <img src="/assets/images/About.jpg" alt="Aboutimage" className='w-[713px]' />
+              <img src="/assets/images/About.jpg" alt="Aboutimage" className='w-[713px]' loading="lazy" />
             </div>
           </div>
 
@@ -108,7 +108,7 @@ function Homepage() {
             </div>
             <div className="lg:hidden block mt-5">
               <div className="flex justify-center">
-                <img src="/assets/images/About.jpg" alt="Aboutimage" className='' />
+                <img src="/assets/images/About.jpg" alt="Aboutimage" className='' loading="lazy" />
               </div>
             </div>
 
@@ -157,7 +157,7 @@ function Homepage() {
             </div>
             <div className="lg:hidden block mt-5">
               <div className="flex justify-center">
-                <img src="/assets/images/Scope.jpg" alt="Scopeimage" className='' />
+                <img src="/assets/images/Scope.jpg" alt="Scopeimage" className='' loading="lazy" />
               </div>
             </div>
 
@@ -190,7 +190,7 @@ function Homepage() {
 
           <div className="lg:block hidden ">
             <div className="flex justify-center">
-              <img src="/assets/images/Scope.jpg" alt="Scopeimage" className='w-[713px]' />
+              <img src="/assets/images/Scope.jpg" alt="Scopeimage" className='w-[713px]' loading="lazy" />
             </div>
           </div>
         </div>
@@ -242,7 +242,7 @@ function Homepage() {
         <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 place-items-center mt-10 mx-auto gap-5">
   <div className="flex gap-3 items-center w-full max-w-[200px]">
     <div className="bg-[#DFDBF2] p-2 rounded-lg flex-shrink-0">
-      <img src="/assets/images/group.png" alt="Group" className="w-[65px] object-contain" />
+      <img src="/assets/images/group.png" alt="Group" className="w-[65px] object-contain" loading="lazy" />
     </div>
     <div className="flex flex-col flex-1">
       <p className="inter-bold lg:text-[30px] text-[25px]">500+</p>
@@ -251,7 +251,7 @@ function Homepage() {
   </div>
   <div className="flex gap-3 items-center w-full max-w-[200px]">
     <div className="bg-[#DFDBF2] p-2 rounded-lg flex-shrink-0">
-      <img src="/assets/images/marketing.png" alt="Group" className="w-[65px] object-contain" />
+      <img src="/assets/images/marketing.png" alt="Group" className="w-[65px] object-contain"  loading="lazy"/>
     </div>
     <div className="flex flex-col flex-1">
       <p className="inter-bold lg:text-[30px] text-[25px]">50+</p>
@@ -260,7 +260,7 @@ function Homepage() {
   </div>
   <div className="flex gap-3 items-center w-full max-w-[200px]">
     <div className="bg-[#DFDBF2] p-2 rounded-lg flex-shrink-0">
-      <img src="/assets/images/paper.png" alt="Group" className="w-[65px] object-contain" />
+      <img src="/assets/images/paper.png" alt="Group" className="w-[65px] object-contain"  loading="lazy"/>
     </div>
     <div className="flex flex-col flex-1">
       <p className="inter-bold lg:text-[30px] text-[25px]">100+</p>
@@ -269,7 +269,7 @@ function Homepage() {
   </div>
   <div className="flex gap-3 items-center w-full max-w-[200px]">
     <div className="bg-[#DFDBF2] p-2 rounded-lg flex-shrink-0">
-      <img src="/assets/images/calendar.png" alt="Group" className="w-[65px] object-contain" />
+      <img src="/assets/images/calendar.png" alt="Group" className="w-[65px] object-contain" loading="lazy" />
     </div>
     <div className="flex flex-col flex-1">
       <p className="inter-bold lg:text-[30px] text-[25px]">5</p>

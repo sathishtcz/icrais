@@ -36,7 +36,7 @@ export default function Scope() {
                         </div>
                         <div className="lg:hidden block mt-5">
                             <div className="flex justify-center">
-                                <img src="/assets/images/Scope.jpg" alt="Scopeimage" className='' />
+                                <img src="/assets/images/Scope.jpg" alt="Scopeimage" className='' loading="lazy" />
                             </div>
                         </div>
 
@@ -61,7 +61,7 @@ export default function Scope() {
 
                     <div className="lg:block hidden ">
                         <div className="flex justify-center">
-                            <img src="/assets/images/Scope.jpg" alt="Scopeimage" className='w-[713px]' />
+                            <img src="/assets/images/Scope.jpg" alt="Scopeimage" className='w-[713px]' loading="lazy" />
                         </div>
                     </div>
                 </div>
