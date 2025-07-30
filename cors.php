@@ -1,8 +1,8 @@
 <?php
 
 $allowed_origins = [
-     "https://icrais.com",
-     "https://www.icrais.com"
+     "http://icrais.com/",
+     "http://www.icrais.com/"
 ];
 
 if (isset($_SERVER['HTTP_ORIGIN']) && in_array($_SERVER['HTTP_ORIGIN'], $allowed_origins)) {

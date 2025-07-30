@@ -83,7 +83,7 @@ export default function PaperSub() {
         googleSheetsParams.append('Institution_Name', formData.Institution_Name);
         googleSheetsParams.append('Paper_Track', formData.Paper_Track);
 
-        const mailPromise = fetch('https://icrais.com/api/mail.php', {
+        const mailPromise = fetch('http://icrais.com/api/mail.php', {
             method: 'POST',
             body: formDataToSend,
         });

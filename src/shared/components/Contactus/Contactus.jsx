@@ -41,7 +41,7 @@ export default function Contactus() {
             //     formDataToSend.append('Paper_File', formData.Paper_File);
             // }
 
-            const response = await fetch('https://icrais.com/api/contact.php', {
+            const response = await fetch('http://icrais.com/api/contact.php', {
                 method: 'POST',
                 body: formDataToSend,
             });
