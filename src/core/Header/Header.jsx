@@ -103,8 +103,8 @@ const Header = () => {
 
 
     return (
-        <div ref={menuRef} className={`w-full fixed top-0 z-20  transition-all duration-300 ${ isActive ==="/" ? scrolled ? "bg-[#DFDBF2]"  : "bg-fixed" : "bg-[#DFDBF2]"} `}>
-            <div className="mx-auto w-full xl:max-w-[1450px] md:max-w-[920px] flex items-center justify-between px-3">
+        <div ref={menuRef} className={`w-full fixed top-0 z-20 shadow-md ${ isActive ==="/" ? scrolled ? "bg-[#DFDBF2]"  : "bg-fixed" : "bg-[#DFDBF2]"} `}>
+            <div className="mx-auto w-full xl:max-w-[1450px] md:max-w-[920px] flex items-center justify-between px-5">
                 <div className="py-4">
                     {/* <Link to="/" className={`text-4xl roboto-slab-bold ${  isActive === "/" ? scrolled ? "text-[#1B56FD]" : "text-[#1B56FD]" : "text-[#1B56FD]" }`}>
                         ICRAIS

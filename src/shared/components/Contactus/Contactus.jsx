@@ -9,11 +9,11 @@ import { toast } from "react-toastify";
 export default function Contactus() {
 
     const [formData, setFormData] = useState({
-        Firstname: '',
-        Lastname: '',
-        Mobile_Number: '',
-        Email_Address: '',
-        Message: '',
+        firstname: '',
+        secondname: '',
+        number: '',
+        email: '',
+        message: '',
     });
     const [status, setStatus] = useState('');
 
@@ -31,17 +31,17 @@ export default function Contactus() {
 
         try {
             const formDataToSend = new FormData();
-            formDataToSend.append('Firstname', formData.Firstname);
-            formDataToSend.append('Lastname', formData.Lastname);
-            formDataToSend.append('Mobile_Number', formData.Mobile_Number);
-            formDataToSend.append('Email_Address', formData.Email_Address);
-            formDataToSend.append('Message', formData.Message);
+            formDataToSend.append('firstname', formData.firstname);
+            formDataToSend.append('secondname', formData.secondname);
+            formDataToSend.append('number', formData.number);
+            formDataToSend.append('email', formData.email);
+            formDataToSend.append('message', formData.message);
 
             // if (formData.Paper_File) {
             //     formDataToSend.append('Paper_File', formData.Paper_File);
             // }
 
-            const response = await fetch('http://192.168.29.11/ICRAIS/Icrais/contact.php', {
+            const response = await fetch('https://icrais.com/api/contact.php', {
                 method: 'POST',
                 body: formDataToSend,
             });
@@ -50,11 +50,11 @@ export default function Contactus() {
                 const result = await response.text();
                 setStatus(result);
                 setFormData({
-                    Firstname: '',
-                    Lastname: '',
-                    Mobile_Number: '',
-                    Email_Address: '',
-                    Message: '',
+                    firstname: '',
+                    secondname: '',
+                    number: '',
+                    email: '',
+                    message: '',
                 });
                 toast.success("Form submitted successfully!");
             } else {
@@ -100,17 +100,17 @@ export default function Contactus() {
                             <div className="lg:w-1/3 bg-[#DFDBF2] p-6 rounded-r-2xl shadow-md">
                                 <h4 className="text-2xl font-bold text-[#1B56FD] mb-6 text-center">Contact Info</h4>
                                 <div className="space-y-6 text-center">
-                                    <div className="flex  items-center gap-3">
+                                    {/* <div className="flex  items-center gap-3">
                                         <BiSolidPhoneCall className="text-2xl text-[#1B56FD] flex-shrink-0" />
                                         <p className="text-lg text-gray-700"><span className="font-semibold text-gray-900">Phone:</span> +91-123-456-7890</p>
-                                    </div>
+                                    </div> */}
                                     <div className="flex  items-center gap-3">
                                         <IoIosMail className="text-2xl text-[#1B56FD] flex-shrink-0" />
                                         <p className="text-lg text-gray-700"><span className="font-semibold text-gray-900">Email:</span> info.icrais@gmail.com</p>
                                     </div>
                                     <div className="flex  items-center gap-3">
                                         <FaLocationDot className="text-2xl text-[#1B56FD] flex-shrink-0" />
-                                        <p className="text-lg text-gray-700"><span className="font-semibold text-gray-900">Location:</span> Chennai, Tamil Nadu</p>
+                                        <p className="text-lg text-gray-700"><span className="font-semibold text-gray-900">Location:</span> Mumbai, India</p>
                                     </div>
                                 </div>
                             </div>
@@ -121,42 +121,42 @@ export default function Contactus() {
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                                         <div>
                                             <label className="block text-gray-700 text-base font-medium mb-2">First Name</label>
-                                            <input type="text" name="Firstname"
+                                            <input type="text" name="firstname"
                                                 onChange={handleChange}
-                                                value={formData.Firstname}
+                                                value={formData.firstname}
                                                 required className="w-full p-3 border-2 border-gray-200 rounded-lg focus:outline-none" placeholder="Your first name" />
                                         </div>
                                         <div>
                                             <label className="block text-gray-700 text-base font-medium mb-2">Last Name</label>
-                                            <input type="text" name="Lastname"
+                                            <input type="text" name="secondname"
                                                 onChange={handleChange}
-                                                value={formData.Lastname}
+                                                value={formData.secondname}
                                                 required className="w-full p-3 border-2 border-gray-200 rounded-lg focus:outline-none" placeholder="Your last name" />
                                         </div>
                                     </div>
                                     <div>
                                         <label className="block text-gray-700 text-base font-medium mb-2">Email</label>
                                         <input type="email" required
-                                            name="Email_Address"
+                                            name="email"
                                             onChange={handleChange}
-                                            value={formData.Email_Address} className="w-full p-3 border-2 border-gray-200 rounded-lg focus:outline-none" placeholder="Your email address" />
+                                            value={formData.email} className="w-full p-3 border-2 border-gray-200 rounded-lg focus:outline-none" placeholder="Your email address" />
                                     </div>
                                     <div>
                                         <label className="block text-gray-700 text-base font-medium mb-2">Phone No</label>
                                         <input type="tel" required
-                                            name="Mobile_Number"
+                                            name="number"
                                             onChange={handleChange}
-                                            value={formData.Mobile_Number} className="w-full p-3 border-2 border-gray-200 rounded-lg focus:outline-none" placeholder="Your phone number" />
+                                            value={formData.number} className="w-full p-3 border-2 border-gray-200 rounded-lg focus:outline-none" placeholder="Your phone number" />
                                     </div>
                                     <div>
-                                        <label className="block text-gray-700 text-base font-medium mb-2">Message</label>
+                                        <label className="block text-gray-700 text-base font-medium mb-2">message</label>
                                         <textarea required
-                                            name="Message"
+                                            name="message"
                                             onChange={handleChange}
-                                            value={formData.Message} className="w-full p-3 border-2 border-gray-200 rounded-lg focus:outline-none h-28 " placeholder="Your message here"></textarea>
+                                            value={formData.message} className="w-full p-3 border-2 border-gray-200 rounded-lg focus:outline-none h-28 " placeholder="Your message here"></textarea>
                                     </div>
                                     <div className="text-center">
-                                        <button type="submit" className="w-fit bg-[#1B56FD] text-white px-3 py-3 rounded-lg  cursor-pointer transition duration-300 inter-semibold">{status === 'Sending...' ? 'Sending...' : 'Send Your Message'}</button>
+                                        <button type="submit" className="w-fit bg-[#1B56FD] text-white px-3 py-3 rounded-lg  cursor-pointer transition duration-300 inter-semibold">{status === 'Sending...' ? 'Sending...' : 'Send Your message'}</button>
                                     </div>
                                 </form>
                             </div>

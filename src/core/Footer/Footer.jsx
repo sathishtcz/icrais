@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="bg-[#1B56FD] text-white rounded-tl-lg rounded-tr-lg">
       <div className=" mx-auto px-5 max-w-[92rem]  lg:py-10 py-5">
         <div className="grid grid-cols-1  md:grid-cols-4 sm:grid-cols-2 md:gap-8 gap-4">
-          <div className='text-center md:text-left flex flex-col justify-start items-start'>
+          <div className='text-center md:text-left flex flex-col justify-center items-start'>
             <Link to='/'>
            
               <img className='w-40 md:mx-0   mx-auto' src="/assets/images/ICRAISWhite.png" alt="logo" />
@@ -44,9 +44,9 @@ const Footer = () => {
               <div className=''>
                 <h4 className="lg:text-xl text-lg font-bold mb-2 ">Contact Info</h4>
                 <ul className="lg:text-base ">
-                  <li><a className="hover:underline"><Link to='' className='flex gap-2 items-center'><IoLocationSharp className='text-lg'/>Chennai, Tamil Nadu</Link></a></li>
+                  <li><a className="hover:underline"><Link to='' className='flex gap-2 items-center'><IoLocationSharp className='text-lg'/>Mumbai, India</Link></a></li>
                   <li className='wrap-anywhere xl:wrap-normal'><a className="hover:underline"><Link to='' className='flex gap-2 items-center'><IoIosMail className="text-lg"/>info.icrais@gmail.com</Link></a></li>
-                  <li><a className="hover:underline"><Link to='' className='flex gap-2 items-center'><BiSolidPhoneCall   className='text-lg'/>+91 0101010101</Link></a></li>
+                  {/* <li><a className="hover:underline"><Link to='' className='flex gap-2 items-center'><BiSolidPhoneCall   className='text-lg'/>+91 0101010101</Link></a></li> */}
                 </ul>
               </div>
             </div>

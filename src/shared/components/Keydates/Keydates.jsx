@@ -108,7 +108,7 @@ export default function Keydates() {
 
 
 
-      <div className="xl:max-w-[1450px]  md:max-w-[920px] px-4 mx-auto mt-8 lg:mt-10 ">
+      {/* <div className="xl:max-w-[1450px]  md:max-w-[920px] px-4 mx-auto mt-8 lg:mt-10 ">
         <p className="inter-semibold lg:text-[30px] text-[25px]">Registration Details</p>
         <p className="inter-regular text-gray-700 sm:text-base md:text-lg lg:text-[16px] text-justify leading-[30px] mt-3 ">Join a vibrant community of researchers, innovators, and industry leaders. Our simple registration process ensures your place at one of the most anticipated conferences in Robotics, AI, and Intelligent Systems. Choose the right category, complete your payment, and get ready to engage with global thought leaders.</p>
 
@@ -174,7 +174,7 @@ export default function Keydates() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   )
 }

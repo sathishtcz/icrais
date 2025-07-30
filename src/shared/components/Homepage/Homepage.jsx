@@ -10,10 +10,10 @@ function Homepage() {
     <>
       <div className="bg-[#DFDBF2] xl:h-screen flex items-center">
         <div className="xl:max-w-[1450px]  md:max-w-[920px] mx-auto px-3">
-          <div className="grid xl:grid-cols-2 grid-cols-1 gap-15 place-items-center py-3">
+          <div className="grid xl:grid-cols-2 grid-cols-1 gap-15 place-items-center py-3 ">
             <div>
               <div className="flex flex-col lg:gap-7 gap-4 xl:mt-15 mt-25">
-                <h1 className="inter-bold lg:text-[50px] md:text-[40px] sm:text-[25px] text-[24px]">International Conference on <span className="text-[#1B56FD]">Robotics, AI,</span> and <span className="text-[#1B56FD]">Intelligent Systems</span></h1>
+                <h1 className="inter-bold 2xl:text-[50px] md:text-[40px] sm:text-[25px] text-[24px]">International Conference on <span className="text-[#1B56FD]">Robotics, AI,</span> and <span className="text-[#1B56FD]">Intelligent Systems</span></h1>
                 <div className="block xl:hidden flex  justify-center">
                   <img src="assets/images/Hero.png" alt="AI and Robotics" className="w-[559px]" loading="lazy"/>
                 </div>
@@ -52,7 +52,7 @@ function Homepage() {
 
                 </div>
 
-                <div className="mt-2">
+                <div className="">
                   <Link to="/paper-submission" >
                     <div className="group flex gap-2 bg-[#C1C2FF] w-fit py-3 px-2 rounded-lg items-center ">
                       <button className="text-black inter-semibold text-lg cursor-pointer">Register Here</button>
@@ -63,10 +63,10 @@ function Homepage() {
               </div>
             </div>
 
-            <div className="">
+            <div className="mt-[75px]">
               <div className="flex flex-col justify-center items-center gap-10">
                 <div className="hidden xl:block">
-                  <img src="assets/images/Hero.png" alt="AI and Robotics" className="w-[559px]" />
+                  <img src="assets/images/Hero.png" alt="AI and Robotics" className="xl:w-[500px] 2xl:w-[559px]" />
                 </div>
                 <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
                   <div className="flex flex-col items-center gap-2">

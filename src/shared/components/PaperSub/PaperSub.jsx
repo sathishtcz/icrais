@@ -50,50 +50,100 @@ export default function PaperSub() {
     };
 
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setStatus('Sending...');
-
-        try {
-            const formDataToSend = new FormData();
-            formDataToSend.append('Paper_Title', formData.Paper_Title);
-            formDataToSend.append('Author_FUll_Name', formData.Author_FUll_Name);
-            formDataToSend.append('Email_Address', formData.Email_Address);
-            formDataToSend.append('Institution_Name', formData.Institution_Name);
-            formDataToSend.append('Paper_Track', formData.Paper_Track);
-
-            if (formData.Paper_File) {
-                formDataToSend.append('Paper_File', formData.Paper_File);
-            }
-
-            const response = await fetch('http://192.168.29.11/ICRAIS/Icrais/mail.php', {
-                method: 'POST',
-                body: formDataToSend,
-            });
-
-            if (response.ok) {
-                const result = await response.text();
-                setStatus(result);
-                setFormData({
-                    Paper_Title: '',
-                    Author_FUll_Name: '',
-                    Email_Address: '',
-                    Institution_Name: '',
-                    Paper_Track: '',
-                    Paper_File: null,
-                });
-                // document.getElementById('Paper_File').value = '';
-                toast.success("Paper submitted successfully!");
-            } else {
-                setStatus('Failed to send submission. Please try again.');
-                toast.error('Failed to send submission. Please try again.');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            setStatus('An error occurred. Please try again.');
-            toast.error('An error occurred. Please try again.');
+   const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('Sending...');
+    
+    const journalName = 'icrais';
+    // Generate unique ID: journalName + YYYYMMDD + HHMMSS
+    const now = new Date();
+    const dateStr = now.toISOString().slice(0, 10).replace(/-/g, ''); // YYYYMMDD
+    const timeStr = now.toTimeString().slice(0, 8).replace(/:/g, ''); // HHMMSS
+    const uniqueId = `${journalName}_${dateStr}_${timeStr}`;
+    
+    try {
+        const formDataToSend = new FormData();
+        formDataToSend.append('Submission_ID', uniqueId);
+        formDataToSend.append('Paper_Title', formData.Paper_Title);
+        formDataToSend.append('Author_FUll_Name', formData.Author_FUll_Name);
+        formDataToSend.append('Email_Address', formData.Email_Address);
+        formDataToSend.append('Institution_Name', formData.Institution_Name);
+        formDataToSend.append('Paper_Track', formData.Paper_Track);
+        
+        if (formData.Paper_File) {
+            formDataToSend.append('Paper_File', formData.Paper_File);
         }
-    };
+
+        const googleSheetsParams = new URLSearchParams();
+        googleSheetsParams.append('Submission_ID', uniqueId);
+        googleSheetsParams.append('journal_name', journalName);
+        googleSheetsParams.append('Paper_Title', formData.Paper_Title);
+        googleSheetsParams.append('Author_FUll_Name', formData.Author_FUll_Name);
+        googleSheetsParams.append('Email_Address', formData.Email_Address);
+        googleSheetsParams.append('Institution_Name', formData.Institution_Name);
+        googleSheetsParams.append('Paper_Track', formData.Paper_Track);
+
+        const mailPromise = fetch('https://icrais.com/api/mail.php', {
+            method: 'POST',
+            body: formDataToSend,
+        });
+
+        const sheetsPromise = fetch('https://script.google.com/macros/s/AKfycbwZ_TtKUqAfcue9TNCKy57hTrCKDUP5dTQnWbpSxBDzlRMllEuOoaxzRDl0kQPah5pZ/exec', {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: googleSheetsParams.toString(),
+        });
+
+        const [mailResponse, sheetsResponse] = await Promise.allSettled([mailPromise, sheetsPromise]);
+
+        const mailSuccess = mailResponse.status === 'fulfilled' && mailResponse.value.ok;
+        const sheetsSuccess = sheetsResponse.status === 'fulfilled';
+        
+        if (sheetsResponse.status === 'rejected') {
+            console.error('Sheets request failed:', sheetsResponse.reason);
+        }
+
+        if (mailSuccess && sheetsSuccess) {
+            setStatus(`Submission successful! Data sent to both email and Google Sheets (${journalName}). Submission ID: ${uniqueId}`);
+            
+            setFormData({
+                Paper_Title: '',
+                Author_FUll_Name: '',
+                Email_Address: '',
+                Institution_Name: '',
+                Paper_Track: '',
+                Paper_File: null,
+            });
+            const fileInput = document.getElementById('Paper_File');
+            if (fileInput) {
+                fileInput.value = '';
+            } else {
+                console.error('Element with ID "Paper_File" not found.');
+            }
+            toast.success(`Paper submitted successfully! `);
+            
+        } else if (mailSuccess && !sheetsSuccess) {
+            setStatus('Email sent successfully, but there might be an issue with Google Sheets.');
+            toast.warning('Email sent successfully. Please check if data was saved to Google Sheets.');
+            
+        } else if (!mailSuccess && sheetsSuccess) {
+            setStatus('Data likely saved to Google Sheets, but failed to send email.');
+            toast.warning('Data might be saved to Google Sheets, but failed to send email.');
+            
+        } else {
+            setStatus('There might be issues with the submission. Please check manually.');
+            toast.error('Submission completed, but please verify the results manually.');
+        }
+
+    } catch (error) {
+        console.error('Error:', error);
+        setStatus('An error occurred during submission. Please try again.');
+        toast.error('An error occurred. Please try again.');
+    }
+}
 
     return (
         <>
@@ -188,10 +238,16 @@ export default function PaperSub() {
                                 </div>
                                 <select name='Paper_Track' value={formData.Paper_Track} onChange={handleFileInputChange}
                                     required className="w-full border-2 border-gray-300 focus:outline-none  rounded-xl px-3 py-4 text-gray-500">
-                                    <option>Select Your Category</option>
-                                    <option>AI</option>
-                                    <option>Machine Learning</option>
-                                    <option>Data Science</option>
+                                    <option value=''>Select Your Category</option>
+                                    <option value='Autonomous Robotics and Systems'>Autonomous Robotics and Systems</option>
+                                    <option value='Machine Learning'>Machine Learning</option>
+                                    <option value='Intelligent Control Systems'>Intelligent Control Systems</option>
+                                    <option value='Human-Robot Interaction'>Human-Robot Interaction</option>
+                                    <option value='AI Ethics'>AI Ethics</option>
+                                    <option value='Smart Sensors'>Smart Sensors</option>
+                                    <option value='Robotics in Healthcare'>Robotics in Healthcare</option>
+                                    <option value='Swarm Robotics'>Swarm Robotics</option>
+                                    <option value='Intelligent Systems'>Intelligent Systems</option>
                                 </select>
                                 <div className="relative w-full border-2 border-dashed border-gray-400 rounded-xl py-10 flex flex-col items-center justify-center text-center text-gray-500 overflow-hidden cursor-pointer">
                                     <input
