@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-function HelmetComponent() {
+function HelmetComponent({title,canonical}) {
   return (
     <Helmet>
             <title>{title}</title>
